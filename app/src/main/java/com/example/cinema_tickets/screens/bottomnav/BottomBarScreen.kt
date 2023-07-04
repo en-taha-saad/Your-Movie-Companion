@@ -7,6 +7,27 @@ sealed class BottomBarScreen(
     val route: String, val icon: Int
 ) {
 
+
+    object BookingMovie : BottomBarScreen(
+        route = "bookingMovie",
+        icon = 0,
+    )
+
+    object MovieDetails : BottomBarScreen(
+        route = "movieDetails",
+        icon = 0,
+    )
+
+    object NowShowing : BottomBarScreen(
+        route = "nowShowing",
+        icon = 0,
+    )
+
+    object ComingSoon : BottomBarScreen(
+        route = "comingSoon",
+        icon = 0,
+    )
+
     object Home : BottomBarScreen(
         route = "home",
         icon = R.drawable.home,
