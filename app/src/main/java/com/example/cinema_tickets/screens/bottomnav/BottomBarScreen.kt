@@ -9,22 +9,22 @@ sealed class BottomBarScreen(
 
     object Home : BottomBarScreen(
         route = "home",
-        icon = R.drawable.ic_launcher_foreground,
+        icon = R.drawable.home,
     )
 
     object Search : BottomBarScreen(
         route = "search",
-        icon = R.drawable.ic_launcher_foreground,
+        icon = R.drawable.search,
     )
 
     object Tickets : BottomBarScreen(
         route = "ticket",
-        icon = R.drawable.ic_launcher_foreground,
+        icon = R.drawable.tickets,
     )
 
     object Profile : BottomBarScreen(
         route = "profile",
-        icon = R.drawable.ic_launcher_foreground,
+        icon = R.drawable.profile,
     )
 
 }
