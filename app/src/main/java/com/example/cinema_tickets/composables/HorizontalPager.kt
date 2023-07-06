@@ -1,5 +1,6 @@
 package com.example.cinema_tickets.composables
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,12 +16,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import coil.size.Scale
 import com.example.cinema_tickets.R
 import com.example.cinema_tickets.screens.HomeScreen
+import com.example.cinema_tickets.screens.bottomnav.BottomBarScreen
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.calculateCurrentOffsetForPage
@@ -30,7 +33,7 @@ import kotlin.math.absoluteValue
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun BuildLoginSlider(sliderList: List<String>) {
+fun BuildLoginSlider(sliderList: List<String>, navController: NavHostController) {
     val pagerState = rememberPagerState(initialPage = 1)
     HorizontalPager(
         count = sliderList.size,
@@ -42,14 +45,16 @@ fun BuildLoginSlider(sliderList: List<String>) {
         Card(
             colors = CardDefaults.cardColors(Color.DarkGray),
             shape = RoundedCornerShape(25.dp),
-            modifier = Modifier.graphicsLayer {
-                lerp(
-                    start = 0.92f, stop = 1f, fraction = 1f - pageOffset.coerceIn(0f, 1f)
-                ).also { scale ->
-                    scaleX = scale
-                    scaleY = scale
+            modifier = Modifier
+                .graphicsLayer {
+                    lerp(
+                        start = 0.92f, stop = 1f, fraction = 1f - pageOffset.coerceIn(0f, 1f)
+                    ).also { scale ->
+                        scaleX = scale
+                        scaleY = scale
+                    }
                 }
-            },
+                .clickable { navController.navigate(BottomBarScreen.MovieDetails.route) },
         ) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current).data(sliderList[page])
@@ -69,6 +74,7 @@ fun BuildLoginSliderPreview() {
             "https://i.ibb.co/2FgBw40/design-1.png",
             "https://i.ibb.co/2FgBw40/design-1.png",
             "https://i.ibb.co/2FgBw40/design-1.png"
-        )
+        ),
+        navController = rememberNavController()
     )
 }

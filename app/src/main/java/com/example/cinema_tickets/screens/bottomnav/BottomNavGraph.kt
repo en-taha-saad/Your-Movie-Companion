@@ -31,11 +31,11 @@ fun BottomNavGraph(
             ProfileScreen()
         }
 
-        composable(route = "movieDetails") {
+        composable(route = BottomBarScreen.MovieDetails.route) {
             MovieDetailsScreen(navController)
         }
 
-        composable(route = "bookingMovie") {
+        composable(route = BottomBarScreen.BookingMovie.route) {
             BookingMovieScreen(navController)
         }
 

@@ -27,4 +27,13 @@ sealed class BottomBarScreen(
         icon = R.drawable.profile,
     )
 
+    object BookingMovie : BottomBarScreen(
+        route = "bookingMovie",
+        icon = 0,
+    )
+
+    object MovieDetails : BottomBarScreen(
+        route = "movieDetails",
+        icon = 0,
+    )
 }
