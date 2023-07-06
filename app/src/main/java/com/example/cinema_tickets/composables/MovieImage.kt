@@ -11,7 +11,7 @@ import coil.size.Scale
 import com.example.cinema_tickets.R
 
 @Composable
-fun MovieImage(image: String, scale: Scale, modifier: Modifier = Modifier){
+fun MovieImage(image: String, scale: Scale, modifier: Modifier = Modifier) {
     AsyncImage(
         modifier = modifier,
         model = ImageRequest.Builder(LocalContext.current).data(image)

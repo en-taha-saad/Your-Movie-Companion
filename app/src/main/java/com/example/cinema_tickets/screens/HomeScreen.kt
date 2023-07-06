@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,6 +23,7 @@ import com.example.cinema_tickets.composables.CustomTabBar
 import com.example.cinema_tickets.composables.MovieTime
 import com.example.cinema_tickets.composables.SpacerVertical24
 import com.example.cinema_tickets.composables.Title
+import com.example.cinema_tickets.screens.bottomnav.BottomNavGraph
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
