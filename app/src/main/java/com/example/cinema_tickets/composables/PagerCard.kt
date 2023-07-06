@@ -27,9 +27,7 @@ import kotlin.math.absoluteValue
 @Composable
 @OptIn(ExperimentalPagerApi::class)
 fun PagerScope.PagerCard(
-    page: Int,
-    navController: NavHostController,
-    sliderList: List<String>
+    page: Int, navController: NavHostController, sliderList: List<String>
 ) {
     Card(
         colors = CardDefaults.cardColors(Color.DarkGray),
@@ -46,11 +44,7 @@ fun PagerScope.PagerCard(
             }
             .clickable { navController.navigate(BottomBarScreen.MovieDetails.route) },
     ) {
-        AsyncImage(
-            model = ImageRequest.Builder(LocalContext.current).data(sliderList[page])
-                .crossfade(true).scale(Scale.FIT).build(),
-            placeholder = painterResource(R.drawable.ic_launcher_background),
-            contentDescription = stringResource(R.string.app_name),
-        )
+        MovieImage(sliderList[page], scale = Scale.FIT)
     }
 }
+
