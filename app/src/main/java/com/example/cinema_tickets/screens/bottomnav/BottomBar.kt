@@ -25,25 +25,29 @@ fun BottomBar(navController: NavHostController) {
     )
     val navStackBackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navStackBackEntry?.destination
+    if (currentDestination?.route != BottomBarScreen.MovieDetails.route || currentDestination.route != BottomBarScreen.BookingMovie.route) {
+        Row(
+            modifier = Modifier
+                .padding(start = 10.dp, end = 10.dp, top = 8.dp, bottom = 8.dp)
+                .background(Color.Transparent)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            screens.forEach { screen ->
 
-    Row(
-        modifier = Modifier
-            .padding(start = 10.dp, end = 10.dp, top = 8.dp, bottom = 8.dp)
-            .background(Color.Transparent)
-            .fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        screens.forEach { screen ->
-            AddItem(
-                screen = screen, currentDestination = currentDestination
-            ) {
-                navController.navigate(screen.route) {
-                    popUpTo(navController.graph.findStartDestination().id)
-                    launchSingleTop = true
+                AddItem(
+                    isTickets = screen.route == BottomBarScreen.Tickets.route,
+                    screen = screen, currentDestination = currentDestination,
+                ) {
+                    navController.navigate(screen.route) {
+                        popUpTo(navController.graph.findStartDestination().id)
+                        launchSingleTop = true
+                    }
                 }
             }
         }
     }
+
 
 }
