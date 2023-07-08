@@ -1,8 +1,10 @@
 package com.example.cinema_tickets.composables
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,12 +24,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.cinema_tickets.R
+import com.example.cinema_tickets.screens.bottomnav.BottomBarScreen
 import com.example.cinema_tickets.ui.theme.BrandColor
 
 
 @Composable
-fun MovieDetailsForegroundDesign(image: String) {
+fun MovieDetailsForegroundDesign(image: String, navController: NavHostController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -54,8 +58,9 @@ fun MovieDetailsForegroundDesign(image: String) {
         }
         SpacerVertical16()
         CategoriesBadges()
+        SpacerVertical24()
         LazyRow(
-            modifier = Modifier.padding(start = 16.dp, top = 24.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(10) {
@@ -70,7 +75,9 @@ fun MovieDetailsForegroundDesign(image: String) {
         )
         SpacerVertical16()
         Button(
-            onClick = { }, modifier = Modifier.height(50.dp), colors = ButtonDefaults.buttonColors(
+            onClick = { navController.navigate(BottomBarScreen.MovieDetails.route) },
+            modifier = Modifier.height(50.dp),
+            colors = ButtonDefaults.buttonColors(
                 containerColor = BrandColor, contentColor = Color.White
             )
         ) {

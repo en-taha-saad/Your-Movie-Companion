@@ -29,7 +29,7 @@ fun MovieDetailsScreen(navController: NavHostController) {
                 .zIndex(1f)
                 .verticalScroll(rememberScrollState())
         ) {
-            MovieDetailsForegroundDesign(image)
+            MovieDetailsForegroundDesign(image, navController)
         }
     }
 }

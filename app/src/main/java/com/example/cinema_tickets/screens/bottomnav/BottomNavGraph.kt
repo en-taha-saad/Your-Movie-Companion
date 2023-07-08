@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.cinema_tickets.screens.BookingMovieScreen
+import com.example.cinema_tickets.screens.BookingMovieScreen.BookingMovieScreen
 import com.example.cinema_tickets.screens.HomeScreen
 import com.example.cinema_tickets.screens.MovieDetailsScreen
 import com.example.cinema_tickets.screens.ProfileScreen
@@ -16,7 +16,7 @@ fun BottomNavGraph(
     navController: NavHostController
 ) {
     NavHost(
-        navController = navController, startDestination = BottomBarScreen.Home.route
+        navController = navController, startDestination = BottomBarScreen.BookingMovie.route
     ) {
         composable(route = BottomBarScreen.Home.route) {
             HomeScreen(navController)

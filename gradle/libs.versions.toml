@@ -1,7 +1,13 @@
 [versions]
 accompanist-pager = "0.19.0"
-agp = "8.2.0-alpha10"
+accompanist-pager-fading = "0.22.0"
+agp = "8.2.0-alpha11"
 coil-compose = "2.4.0"
+compiler = "1.4.8"
+dagger = "2.46.1"
+hilt-android = "2.46.1"
+hilt-android-compiler = "2.44"
+hilt-navigation-compose = "1.0.0"
 kotlin = "1.8.10"
 core-ktx = "1.9.0"
 junit = "4.13.2"
@@ -10,15 +16,27 @@ espresso-core = "3.5.1"
 lifecycle-runtime-ktx = "2.6.1"
 activity-compose = "1.7.2"
 compose-bom = "2023.03.00"
+material = "1.4.3"
+material3 = "1.1.1"
 navigation-compose = "2.6.0"
 ui-util = "1.4.3"
 
 [libraries]
 accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist-pager" }
+accompanist-pager-fading = { module = "com.google.accompanist:accompanist-pager-fading", version.ref = "accompanist-pager-fading" }
+androidx-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "compiler" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle-runtime-ktx" }
+androidx-material = { module = "androidx.compose.material:material", version.ref = "material" }
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
 androidx-ui-util = { module = "androidx.compose.ui:ui-util", version.ref = "ui-util" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt-android-compiler" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
