@@ -14,7 +14,7 @@ import com.example.cinema_tickets.screens.BookingMovie.composables.BookingMovieF
 
 @Composable
 fun BookingMovieScreen(navController: NavHostController) {
-    BookingMovieBackgroundDesign()
+    BookingMovieBackgroundDesign(navController)
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
         ) {

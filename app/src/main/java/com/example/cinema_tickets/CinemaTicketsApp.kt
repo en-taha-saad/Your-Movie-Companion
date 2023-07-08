@@ -1,6 +1,7 @@
 package com.example.cinema_tickets
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -38,7 +39,7 @@ fun CinemaTicketsApp() {
                     navController = navController,
                     currentDestination = currentDestination,
                     screens = screens
-                )
+                ) else Box{}
             },
         ) {
             Column(

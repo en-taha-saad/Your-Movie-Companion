@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.cinema_tickets.R
 import com.example.cinema_tickets.SharedComposables.CircularIcon
@@ -23,7 +24,7 @@ import com.example.cinema_tickets.ui.theme.BrandColor
 import com.example.cinema_tickets.ui.theme.SelectedDateOrTimeColor
 
 @Composable
-fun BookingMovieBackgroundDesign() {
+fun BookingMovieBackgroundDesign(navHostController: NavHostController) {
     Box(
         modifier = Modifier.background(Color.Black)
     ) {
@@ -41,7 +42,7 @@ fun BookingMovieBackgroundDesign() {
                     height = 46,
                     padding = 8,
                     backgroundColor = SelectedDateOrTimeColor.copy(alpha = 0.5f),
-                    onClick = { })
+                    onClick = {navHostController.popBackStack() })
                 Box {}
             }
             CinemaFilm(R.drawable.header)

@@ -22,7 +22,7 @@ import com.example.cinema_tickets.screens.MovieDetails.composables.MovieDetailsF
 fun MovieDetailsScreen(navController: NavHostController) {
     val image = "https://i.ibb.co/Rg0Rczw/movie-image.jpg"
     Box(modifier = Modifier.fillMaxSize()) {
-        MovieDetailsBackgroundDesign(image)
+        MovieDetailsBackgroundDesign(image, navController)
         Column(
             modifier = Modifier
                 .fillMaxSize()

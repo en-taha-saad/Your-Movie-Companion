@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import coil.size.Scale
 import com.example.cinema_tickets.R
 import com.example.cinema_tickets.SharedComposables.CircularIcon
@@ -17,11 +18,10 @@ import com.example.cinema_tickets.ui.theme.BrandColor
 import com.example.cinema_tickets.ui.theme.SelectedDateOrTimeColor
 
 @Composable
-fun MovieDetailsBackgroundDesign(image: String) {
+fun MovieDetailsBackgroundDesign(image: String, navHostController: NavHostController) {
     Box {
         MovieImage(
             image, scale = Scale.FILL, modifier = Modifier.fillMaxWidth()
-
         )
         Row(
             modifier = Modifier
@@ -37,7 +37,7 @@ fun MovieDetailsBackgroundDesign(image: String) {
                 height = 46,
                 padding = 8,
                 backgroundColor = SelectedDateOrTimeColor.copy(alpha = 0.5f),
-                onClick = { }
+                onClick = { navHostController.popBackStack() }
             )
             MovieTime(shownOnHome = true)
 
@@ -53,7 +53,7 @@ fun MovieDetailsBackgroundDesign(image: String) {
                 height = 54,
                 padding = 12,
                 backgroundColor = BrandColor,
-                onClick = { }
+                onClick = {  }
             )
         }
 

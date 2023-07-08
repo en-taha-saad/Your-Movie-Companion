@@ -95,5 +95,7 @@ fun MovieDetailsForegroundDesign(image: String, navController: NavHostController
                 Text(text = "Booking", color = Color.White)
             }
         }
+        SpacerVertical16()
+
     }
 }
